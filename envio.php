@@ -3,10 +3,10 @@
 require 'mailer/PHPMailerAutoload.php';
 
       if (isset($_POST['assunto']) && !empty($_POST['assunto'])) {
-                 $assunto = $_POST['assunto'];
+                 $assunto = filter_input(INPUT_POST, 'assunto');
        }
       if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
-                 $mensagem = $_POST['mensagem'];
+                 $mensagem = filter_input(INPUT_POST,'mensagem');
       }
 
     // $mail = new PHPMailer;
