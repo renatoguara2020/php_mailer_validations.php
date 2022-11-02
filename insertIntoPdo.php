@@ -12,10 +12,20 @@ try {
 } catch (PDOException $error) {
   echo 'Connection error: ' . $error->getMessage();
 }
-// Set the variables for the person we want to add to the database
-$first_Name = "Thom";
-$last_Name = "Vial";
-$email = "thom.v@some.com";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (isset($_POST['first_Name']) && !empty($_POST['first_Name'])) {
+               $first_Name = filter_input(INPUT_POST, 'first_Name');
+     }
+    if (isset($_POST['last_Name']) && !empty($_POST['last_Name'])) {
+               $last_Name = filter_input(INPUT_POST,'last_Name');
+    }
+    if(isset($_POST['email']) && !empty($_POST['email'])) {
+               $email = filter_input(INPUT_POST,'email');
+    }
+  }
+
 // Here we create a variable that calls the prepare() method of the database object
 // The SQL query you want to run is entered as the parameter, and placeholders are written like this :placeholder_name
 $my_Insert_Statement = $my_Db_Connection->prepare("INSERT INTO Students (name, lastname, email) VALUES (:first_name, :last_name, :email)");
@@ -31,10 +41,7 @@ if ($my_Insert_Statement->execute()) {
 } else {
   echo "Unable to create record";
 }
-// At this point you can change the data of the variables and execute again to add more data to the database
-$first_Name = "John";
-$last_Name = "Smith";
-$email = "john.smith@email.com";
+
 $my_Insert_Statement->execute();
 // Execute again now that the variables have changed
 if ($my_Insert_Statement->execute()) {
