@@ -30,12 +30,12 @@
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            if (isset($_POST['first_Name']) && !empty($_POST['first_Name']) && FILTER_SANITIZE_SPECIAL_CHARS['first_Name']) {
-                      $first_Name = filter_input(INPUT_POST, 'first_Name');
+            if (isset($_POST['first_Name']) && !empty($_POST['firstName']) && FILTER_SANITIZE_SPECIAL_CHARS['first_Name']) {
+                      $firstName = filter_input(INPUT_POST, 'firstName');
                       
             }
-            if (isset($_POST['last_Name']) && !empty($_POST['last_Name']) && FILTER_SANITIZE_SPECIAL_CHARS['last_Name']) {
-                      $last_Name = filter_input(INPUT_POST,'last_Name');
+            if (isset($_POST['last_Name']) && !empty($_POST['lastName']) && FILTER_SANITIZE_SPECIAL_CHARS['last_Name']) {
+                      $lastName = filter_input(INPUT_POST,'lastName');
             }
             if(isset($_POST['email']) && !empty($_POST['email']) && FILTER_SANITIZE_EMAIL['email']) {
                       $email = filter_input(INPUT_POST,'email');
@@ -51,9 +51,9 @@
         $stmt = $dsn->prepare("INSERT INTO Students (firstname, lastname, email) VALUES (:first_name, :last_name, :email)");
         // Now we tell the script which variable each placeholder actually refers to using the bindParam() method
         // First parameter is the placeholder in the statement above - the second parameter is a variable that it should refer to
-        $stmt->bindValue(':first_name', $first_Name);
-        $stmt->bindValue(':last_name', $_POST['last_Name']);
-        $stmt->bindValue(':email', $_POST['email']);
+        $stmt->bindValue(':first_name', $firstName);
+        $stmt->bindValue(':last_name', $lastName);
+        $stmt->bindValue(':email', $email);
         // Execute the query using the data we just defined
         // The execute() method returns TRUE if it is successful and FALSE if it is not, allowing you to write your own messages here
         if ($stmt->execute()) {
