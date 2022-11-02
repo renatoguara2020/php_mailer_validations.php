@@ -5,7 +5,7 @@ class Conexao {
         $this->pdo = new PDO('mysql:host=localhost;dbname=login', 'root', '');
     }
     public function select($nome, $senha) {
-        $stmt = $this->pdo->prepare("select * from login where nome = '$nome' and senha = '$senha'");
+        $stmt = $this->pdo->prepare("select * from login where nome = '$nome' and senha = '$senha' ");
         $stmt->bindValue(':nome', $nome);
         $stmt->bindValue(':senha', $senha);
         $run = $stmt->execute();
