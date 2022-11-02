@@ -14,7 +14,7 @@
 <body>
 
     <?php
-        $servername = "mysql.hostinger.com";
+        $servername = "localhost";
         $database = "u266072517_name"; 
         $username = "u266072517_user";
         $password = "buystuffpwd";
