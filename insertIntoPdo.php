@@ -30,13 +30,15 @@
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            if (isset($_POST['first_Name']) && !empty($_POST['first_Name'])) {
+            if (isset($_POST['first_Name']) && !empty($_POST['first_Name']) && FILTER_SANITIZE_SPECIAL_CHARS['first_Name']) {
+                      
                       $first_Name = filter_input(INPUT_POST, 'first_Name');
+                      
             }
-            if (isset($_POST['last_Name']) && !empty($_POST['last_Name'])) {
+            if (isset($_POST['last_Name']) && !empty($_POST['last_Name']) && FILTER_SANITIZE_SPECIAL_CHARS['last_Name']) {
                       $last_Name = filter_input(INPUT_POST,'last_Name');
             }
-            if(isset($_POST['email']) && !empty($_POST['email'])) {
+            if(isset($_POST['email']) && !empty($_POST['email']) && FILTER_SANITIZE_EMAIL['email']) {
                       $email = filter_input(INPUT_POST,'email');
             }
           }
