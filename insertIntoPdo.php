@@ -40,6 +40,10 @@
             if(isset($_POST['email']) && !empty($_POST['email']) && FILTER_SANITIZE_EMAIL['email']) {
                       $email = filter_input(INPUT_POST,'email');
             }
+            if(isset($_POST['dataNascimento']) && !empty($_POST['dataNascimento']) && FILTER_SANITIZE_EMAIL['dataNascimento']){
+                      $dataNascimento = filter_input(INPUT_POST,'dataNascimento');
+            }
+            
           }
 
         // Here we create a variable that calls the prepare() method of the database object
