@@ -1,6 +1,6 @@
 <?php
 
-require 'mailer/PHPMailerAutoload.php';
+require_once 'connectionPDO1.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
