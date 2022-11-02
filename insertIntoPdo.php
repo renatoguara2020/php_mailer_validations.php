@@ -52,8 +52,8 @@
         // Now we tell the script which variable each placeholder actually refers to using the bindParam() method
         // First parameter is the placeholder in the statement above - the second parameter is a variable that it should refer to
         $stmt->bindValue(':first_name', $first_Name);
-        $stmt->bindValue(':last_name', $last_Name);
-        $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':last_name', $_POST['last_Name']);
+        $stmt->bindValue(':email', $_POST['email']);
         // Execute the query using the data we just defined
         // The execute() method returns TRUE if it is successful and FALSE if it is not, allowing you to write your own messages here
         if ($stmt->execute()) {
