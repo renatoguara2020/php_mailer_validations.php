@@ -23,7 +23,7 @@
         // Create a new connection to the MySQL database using PDO, $my_Db_Connection is an object
         try { 
           $dsn = new PDO($sql, $username, $password, $dsn_Options);
-          echo "Connected successfully";
+          echo "Connected Successfully";
         } catch (PDOException $error) {
           echo 'Connection error: ' . $error->getMessage();
         }
@@ -43,7 +43,7 @@
 
         // Here we create a variable that calls the prepare() method of the database object
         // The SQL query you want to run is entered as the parameter, and placeholders are written like this :placeholder_name
-        $stmt = $dsn->prepare("INSERT INTO Students (nome, lastname, email) VALUES (:first_name, :last_name, :email)");
+        $stmt = $dsn->prepare("INSERT INTO Students (firstname, lastname, email) VALUES (:first_name, :last_name, :email)");
         // Now we tell the script which variable each placeholder actually refers to using the bindParam() method
         // First parameter is the placeholder in the statement above - the second parameter is a variable that it should refer to
         $stmt->bindParam(':first_name', $first_Name);
