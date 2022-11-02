@@ -31,7 +31,6 @@
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if (isset($_POST['first_Name']) && !empty($_POST['first_Name']) && FILTER_SANITIZE_SPECIAL_CHARS['first_Name']) {
-                      
                       $first_Name = filter_input(INPUT_POST, 'first_Name');
                       
             }
