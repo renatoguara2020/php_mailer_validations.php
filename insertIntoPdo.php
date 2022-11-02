@@ -1,4 +1,15 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <?php
 $servername = "mysql.hostinger.com";
 $database = "u266072517_name"; 
 $username = "u266072517_user";
@@ -45,7 +56,16 @@ if ($my_Insert_Statement->execute()) {
 $my_Insert_Statement->execute();
 // Execute again now that the variables have changed
 if ($my_Insert_Statement->execute()) {
-  echo "New record created successfully";
+  echo '<div class="alert alert-success" role="alert">
+  Sucessfully created!
+</div>';
 } else {
-  echo "Unable to create record";
+  echo  '<div class="alert alert-danger" role="alert">
+  Unable to create new record!
+</div>';
 }
+?>
+
+</body>
+
+</html>
