@@ -40,7 +40,7 @@
             if(isset($_POST['email']) && !empty($_POST['email']) && FILTER_SANITIZE_EMAIL['email']) {
                       $email = filter_input(INPUT_POST,'email');
             }
-            if(isset($_POST['dataNascimento']) && !empty($_POST['dataNascimento']) && FILTER_SANITIZE_EMAIL['dataNascimento']){
+            if(isset($_POST['dataNascimento']) && !empty($_POST['dataNascimento']) && FILTER_SANITIZE_SPECIAL_CHARS['dataNascimento']){
                       $dataNascimento = filter_input(INPUT_POST,'dataNascimento');
             }
             
