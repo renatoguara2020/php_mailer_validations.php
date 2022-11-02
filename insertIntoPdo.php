@@ -57,7 +57,7 @@
         </div>';
         } else {
           echo  '<div class="alert alert-danger" role="alert">
-          Unable to create new record!
+          Unable to create new record, try again !
         </div>';
         }
 
