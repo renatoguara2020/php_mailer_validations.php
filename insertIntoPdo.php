@@ -48,13 +48,14 @@
 
         // Here we create a variable that calls the prepare() method of the database object
         // The SQL query you want to run is entered as the parameter, and placeholders are written like this :placeholder_name
-        $stmt = $dsn->prepare("INSERT INTO Students (firstname, lastname, email) VALUES (:first_name, :last_name, :email)");
+        $stmt = $dsn->prepare("INSERT INTO Students (firstname, lastname, email, data_nascimento) VALUES (:first_name, :last_name, :email, :data_nascimento)");
         // Now we tell the script which variable each placeholder actually refers to using the bindParam() method
         // First parameter is the placeholder in the statement above - the second parameter is a variable that it should refer to
         $stmt->bindValue(':first_name', $firstName);
         $stmt->bindValue(':last_name', $lastName);
         $stmt->bindValue(':email', $email);
-        // Execute the query using the data we just defined
+        $stmt->bindValue(':data_nascimento', $dataNascimento);
+        
         // The execute() method returns TRUE if it is successful and FALSE if it is not, allowing you to write your own messages here
         if ($stmt->execute()) {
           echo  '<div class="alert alert-success" role="alert">
@@ -84,4 +85,5 @@
     </script>
 </body>
 
-</html>
+</html>, $dataNascimento);
+// Execute the query using the data we j
