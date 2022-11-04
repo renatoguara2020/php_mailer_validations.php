@@ -62,7 +62,7 @@
         $stmt->bindValue(4,':data_nascimento', $dataNascimento);
         
         // The execute() method returns TRUE if it is successful and FALSE if it is not, allowing you to write your own messages here
-        if ($stmt->execute()) {
+        if ($stmt->execute() == true) {
           echo  '<div class="alert alert-success" role="alert">
           New record created Sucessfully !
         </div>';
