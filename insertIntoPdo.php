@@ -32,6 +32,9 @@
                       $dataNascimento = filter_input(INPUT_POST,'dataNascimento');
             }
             
+          }else{
+
+            echo "Preencha os campos corretamento";
           }
 
           $servername = "localhost";
