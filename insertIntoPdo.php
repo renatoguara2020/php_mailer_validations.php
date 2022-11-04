@@ -62,7 +62,7 @@
         $stmt->bindValue(4,':data_nascimento', $dataNascimento);
         
         // The execute() method returns TRUE if it is successful and FALSE if it is not, allowing you to write your own messages here
-        if ($stmt->execute() == true) {
+        if ($stmt->execute()) {
           echo  '<div class="alert alert-success" role="alert">
           New record created Sucessfully !
         </div>';
@@ -83,6 +83,15 @@
           Unable to create new record!
         </div>';
         }
+
+
+        $consulta = $pdo->query("SELECT nome, usuario FROM login;");
+
+
+            while ($linha = $consulta->fetchAll(PDO::FETCH_ASSOC)) {
+              
+    echo "Nome: {$linha['nome']} - Usuário: {$linha['usuario']}<br />";
+}
 ?>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
