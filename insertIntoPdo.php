@@ -34,7 +34,7 @@
             
           }else{
 
-            echo "Preencha os campos corretamente";
+            echo '<div class="alert alert-danger" role="alert">Preencha os campos corretamente</div>';
           }
 
           $servername = "localhost";
