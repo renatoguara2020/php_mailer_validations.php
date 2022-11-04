@@ -14,19 +14,7 @@
 <body>
 
     <?php
-        $servername = "localhost";
-        $database = "u266072517_name"; 
-        $username = "u266072517_user";
-        $password = "buystuffpwd";
-        $sql = "mysql:host=$servername;dbname=$database;";
-        $dsn_Options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-        // Create a new connection to the MySQL database using PDO, $dsn is an object
-        try { 
-          $dsn = new PDO($sql, $username, $password, $dsn_Options);
-          echo "Connected Successfully";
-        } catch (PDOException $error) {
-          echo 'Connection error: ' . $error->getMessage();
-        }
+       
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -44,6 +32,20 @@
                       $dataNascimento = filter_input(INPUT_POST,'dataNascimento');
             }
             
+          }
+
+          $servername = "localhost";
+          $database = "u266072517_name"; 
+          $username = "u266072517_user";
+          $password = "buystuffpwd";
+          $sql = "mysql:host=$servername;dbname=$database;";
+          $dsn_Options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+          // Create a new connection to the MySQL database using PDO, $dsn is an object
+          try { 
+            $dsn = new PDO($sql, $username, $password, $dsn_Options);
+            echo "Connected Successfully";
+          } catch (PDOException $error) {
+            echo 'Connection error: ' . $error->getMessage();
           }
 
         // Here we create a variable that calls the prepare() method of the database object
@@ -85,5 +87,4 @@
     </script>
 </body>
 
-</html>, $dataNascimento);
-// Execute the query using the data we j
+</html>
