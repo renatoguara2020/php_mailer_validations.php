@@ -34,7 +34,7 @@
             
           }else{
 
-            echo "Preencha os campos corretamento";
+            echo "Preencha os campos corretamente";
           }
 
           $servername = "localhost";
