@@ -1,4 +1,10 @@
 <?php
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['firstName']) && !empty($_POST['firstName'])) {
+        $firstName = filter_input(INPUT_POST,'firstName',FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+}
 $servername = "localhost";
 $username = "username";
 $password = "password";
@@ -8,15 +14,13 @@ try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  
-   // begin the transaction
-   $conn->beginTransaction();
 
   // prepare sql and bind parameters
-  $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (:firstname, :lastname, :email)");
-  $stmt->bindValue(':firstname', $firstname);
-  $stmt->bindValue(':lastname', $lastname);
-  $stmt->bindValue(':email', $email);
+  $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email)
+  VALUES (:firstname, :lastname, :email)");
+  $stmt->bindParam(':firstname', $firstname);
+  $stmt->bindParam(':lastname', $lastname);
+  $stmt->bindParam(':email', $email);
 
   // insert a row
   $firstname = "John";
@@ -40,5 +44,3 @@ try {
 } catch(PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
-$conn = null;
-?>
