@@ -18,18 +18,18 @@
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            if (isset($_POST['firstName']) || !empty($_POST['firstName']) && (FILTER_SANITIZE_SPECIAL_CHARS['firstName'])) {
-                      $firstName = filter_input(INPUT_POST, 'firstName');
+            if (isset($_POST['firstName']) && !empty($_POST['firstName'])) {
+                      $firstName = filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_SPECIAL_CHARS);
                       
             }
-            if (isset($_POST['lastName']) || !empty($_POST['lastName']) && (FILTER_SANITIZE_SPECIAL_CHARS['lastName'])) {
-                      $lastName = filter_input(INPUT_POST,'lastName');
+            if (isset($_POST['lastName']) && !empty($_POST['lastName'])) {
+                      $lastName = filter_input(INPUT_POST,'lastName', FILTER_SANITIZE_SPECIAL_CHARS);
             }
-            if(isset($_POST['email']) || !empty($_POST['email']) && (FILTER_SANITIZE_EMAIL['email'])) {
-                      $email = filter_input(INPUT_POST,'email');
+            if(isset($_POST['email']) && !empty($_POST['email'])) {
+                      $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_EMAIL);
             }
-            if(isset($_POST['dataNascimento']) || !empty($_POST['dataNascimento']) && (FILTER_SANITIZE_SPECIAL_CHARS['dataNascimento'])){
-                      $dataNascimento = filter_input(INPUT_POST,'dataNascimento');
+            if(isset($_POST['dataNascimento']) && !empty($_POST['dataNascimento'])){
+                      $dataNascimento = filter_input(INPUT_POST,'dataNascimento', FILTER_SANITIZE_SPECIAL_CHARS);
             }
             
           }else{
