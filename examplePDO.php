@@ -19,9 +19,9 @@ try {
 
   // prepare sql and bind parameters
   $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (:firstname, :lastname, :email)");
-  $stmt->bindValue(1,':firstname', $firstname);
-  $stmt->bindValue(2,':lastname', $lastname);
-  $stmt->bindValue(3,':email', $email);
+  $stmt->bindParam(1,':firstname', $firstname,PDO::PARAM_STR);
+  $stmt->bindParam(2,':lastname', $lastname,PDO::PARAM_STR);
+  $stmt->bindParam(3,':email', $email,PDO::PARAM_STR);
 
   // insert a row
   $firstname = "John";
