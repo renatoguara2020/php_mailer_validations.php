@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $firstName = filter_input(INPUT_POST,'firstName',FILTER_SANITIZE_SPECIAL_CHARS);
     }
 }
+
 $servername = "localhost";
 $username = "username";
 $password = "password";
@@ -18,9 +19,9 @@ try {
 
   // prepare sql and bind parameters
   $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (:firstname, :lastname, :email)");
-  $stmt->bindValue(':firstname', $firstname);
-  $stmt->bindValue(':lastname', $lastname);
-  $stmt->bindValue(':email', $email);
+  $stmt->bindValue(1,':firstname', $firstname);
+  $stmt->bindValue(2,':lastname', $lastname);
+  $stmt->bindValue(3,':email', $email);
 
   // insert a row
   $firstname = "John";
