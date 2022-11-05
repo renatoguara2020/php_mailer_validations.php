@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['firstName']) && !empty($_POST['firstName']) && $_POST['firstName'] != '') {
+    if (isset($_POST['firstName']) && !empty($_POST['firstName']) && $_POST['firstName'] !== '') {
         $firstName = filter_input(INPUT_POST,'firstName',FILTER_SANITIZE_SPECIAL_CHARS);
     }
 }
