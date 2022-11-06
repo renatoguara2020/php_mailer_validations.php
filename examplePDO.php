@@ -13,6 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['email']) && !empty($_POST['email']) && $_POST['email'] != ''){
         $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
     }
+
+    if(isset($_POST['password']) && !empty($_POST['password']) && $_POST['password'] != ''){
+        $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_SPECIAL_CHARS);
+    }
     
 }
 
@@ -28,10 +32,11 @@ try {
   $conn->beginTransaction();
 
   // prepare sql and bind parameters
-  $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (:firstname, :lastname, :email)");
+  $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (:firstname, :lastname, :email, :senha)");
   $stmt->bindParam(1,':firstname', $firstname,PDO::PARAM_STR);
   $stmt->bindParam(2,':lastname', $lastname,PDO::PARAM_STR);
   $stmt->bindParam(3,':email', $email,PDO::PARAM_STR);
+  $stmt->bindParam(4,':senha', $senha,PDO::PARAM_STR);
 
   // insert a row
   $firstname = "John";
