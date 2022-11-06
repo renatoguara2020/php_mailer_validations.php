@@ -9,25 +9,15 @@ include_once 'connectionPDO1.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if (isset($_POST['firstName']) && !empty($_POST['firstName']) && ($_POST['firstName'] != '')) {
-        $firstName = filter_input(INPUT_POST,'firstName',FILTER_SANITIZE_SPECIAL_CHARS);
+    if (isset($_POST['usertName']) && !empty($_POST['userName']) && ($_POST['userName'] != '')) {
+        $userName = filter_input(INPUT_POST,'firstName',FILTER_SANITIZE_SPECIAL_CHARS);
     }
 
-    if(isset($_POST['lastName']) && !empty($_POST['lastName']) && ($_POST['lastName'] != '')) {
+    if(isset($_POST['passwors']) && !empty($_POST['password']) && ($_POST['password'] != '')) {
         $lastName = filter_input(INPUT_POST,'lastName',FILTER_SANITIZE_SPECIAL_CHARS);
     }
 
-    if(isset($_POST['email']) && !empty($_POST['email']) && ($_POST['email'] != '')){
-        $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
-    }
-
-    if(isset($_POST['password']) && !empty($_POST['password']) && $_POST['password'] != ''){
-        $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_SPECIAL_CHARS);
-    }
-
-    if(isset($_POST['dataNascimento']) && !empty($_POST['dataNascimento']) && $_POST['dataNascimento'] != ''){
-        $dataNascimento = filter_input(INPUT_POST,'dataNascimento',FILTER_SANITIZE_SPECIAL_CHARS);
-    }
+    
     
 }
 
