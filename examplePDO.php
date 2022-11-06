@@ -1,12 +1,17 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
     if (isset($_POST['firstName']) && !empty($_POST['firstName']) && $_POST['firstName'] != '') {
         $firstName = filter_input(INPUT_POST,'firstName',FILTER_SANITIZE_SPECIAL_CHARS);
     }
  if(isset($_POST['lastName']) && !empty($_POST['lastName']) && $_POST['lastName'] != '') {
         $lastName = filter_input(INPUT_POST,'lastName',FILTER_SANITIZE_SPECIAL_CHARS);
- }   
+ }
+ if(isset($_POST['email']) && !empty($_POST['email']) && $_POST['email'] != ''){
+        $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
+ }
+    
 }
 
 $servername = "localhost";
