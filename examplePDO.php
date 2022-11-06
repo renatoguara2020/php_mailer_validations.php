@@ -1,5 +1,11 @@
 <?php
 
+require_once 'config.php';
+
+?>
+
+<?php
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['firstName']) && !empty($_POST['firstName']) && $_POST['firstName'] != '') {
@@ -20,10 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "myDBPDO";
+$servername = "BD_SERVIDOR";
+$username = "BD_USUARIO";
+$password = "BD_SENHA";
+$dbname = "BD_BANCO";
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
