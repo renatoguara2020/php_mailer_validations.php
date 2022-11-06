@@ -23,6 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['password']) && !empty($_POST['password']) && $_POST['password'] != ''){
         $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_SPECIAL_CHARS);
     }
+
+    if(isset($_POST['dataNascimento']) && !empty($_POST['dataNascimento']) && $_POST['dataNascimento'] != ''){
+        $dataNascimento = filter_input(INPUT_POST,'dataNascimento',FILTER_SANITIZE_SPECIAL_CHARS);
+    }
     
 }
 
