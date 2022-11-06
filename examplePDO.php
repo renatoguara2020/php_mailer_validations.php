@@ -10,15 +10,13 @@ include_once 'connectionPDO1.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['usertName']) && !empty($_POST['userName']) && ($_POST['userName'] != '')) {
-        $userName = filter_input(INPUT_POST,'firstName',FILTER_SANITIZE_SPECIAL_CHARS);
+        $userName = filter_input(INPUT_POST,'firstName',FILTER_SANITIZE_EMAIL);
     }
 
-    if(isset($_POST['passwors']) && !empty($_POST['password']) && ($_POST['password'] != '')) {
+    if(isset($_POST['password']) && !empty($_POST['password']) && ($_POST['password'] != '')) {
         $lastName = filter_input(INPUT_POST,'lastName',FILTER_SANITIZE_SPECIAL_CHARS);
     }
-
-    
-    
+   
 }
 
 $servername = "BD_SERVIDOR";
