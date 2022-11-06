@@ -9,8 +9,8 @@ include_once 'connectionPDO1.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if (isset($_POST['usertName']) && !empty($_POST['userName']) && ($_POST['userName'] != '')) {
-        $userName = filter_input(INPUT_POST,'userName',FILTER_SANITIZE_EMAIL);
+    if (isset($_POST['emailAddress']) && !empty($_POST['emailAddress']) && ($_POST['emailAddress'] != '')) {
+        $emailAddress = filter_input(INPUT_POST,'emailAddress',FILTER_SANITIZE_EMAIL);
     }
 
     if(isset($_POST['password']) && !empty($_POST['password']) && ($_POST['password'] != '')) {
@@ -33,9 +33,9 @@ try {
   $dsn->beginTransaction();
 
   // prepare sql and bind parameters
-  $stmt = $dsn->prepare("INSERT INTO MyGuests (firstname, lastname, email, senha, datanascimento) VALUES (:firstname, :lastname, :email, :senha, :datanascimento)");
-  $stmt->bindParam(1,':username', $UserName, PDO::PARAM_STR);
-  $stmt->bindParam(2,':senha', $lastName, PDO::PARAM_STR);
+  $stmt = $dsn->prepare("INSERT INTO MyGuests (username, senha) VALUES (:username, :senha)");
+  $stmt->bindParam(1,':username', $emailAddress, PDO::PARAM_STR);
+  $stmt->bindParam(2,':senha', $senha, PDO::PARAM_STR);
   
 
   // insert a row
