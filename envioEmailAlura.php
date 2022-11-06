@@ -38,7 +38,7 @@ mail($destinatario, $assunto , $body, "From: $email\r\n");
 </head>
 
 <body>
-    <form class="form form-p d-flex justify-content-lg-center d-lg-flex flex-column d-sm-flex" action="envia_fale.php"
+    <form class="form form-p d-flex justify-content-lg-center d-lg-flex flex-column d-sm-flex" action="envio.php"
         method="post" name="form">
         <div
             class="group1 d-md-flex mx-md-0 d-lg-flex d-xl-flex align-items-xl-center ml-xl-0 mr-xl-0 mx-lg-auto mx-auto mx-sm-auto">
@@ -58,8 +58,8 @@ mail($destinatario, $assunto , $body, "From: $email\r\n");
                 <option value="seg">Segurança</option>
             </select>
         </div>
-        <textarea placeholder="Mensagem" name="mensabem" id="" cols="30" rows="10" class="mt-xl-2"></textarea>
-        <button class="btn btn-enviar" type="submit" name="submit" value="submit"> Enviar</button>
+        <textarea placeholder="Mensagem" name="mensagem" id="" cols="30" rows="10" class="mt-xl-2"></textarea>
+        <button class="btn btn-enviar" type="submit" name="enviarDadosForm" value="submit"> Enviar</button>
     </form>
 </body>
 

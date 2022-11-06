@@ -5,10 +5,10 @@ require_once 'connectionPDO1.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       if (isset($_POST['assunto']) && !empty($_POST['assunto'])) {
-                 $assunto = filter_input(INPUT_POST, 'assunto');
+                 $assunto = filter_input(INPUT_POST, 'assunto', FILTER_SANITIZE_SPECIAL_CHARS);
        }
       if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
-                 $mensagem = filter_input(INPUT_POST,'mensagem');
+                 $mensagem = filter_input(INPUT_POST,'mensagem', FILTER_SANITIZE_SPECIAL_CHARS);
       }
     }
 
