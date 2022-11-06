@@ -91,16 +91,17 @@ try {
 </head>
 
 <body>
-    <form>
+    <form action="" method="POST">
         <!-- Email input -->
         <div class="form-outline mb-4">
-            <input type="email" id="form2Example1" class="form-control" name="emailAddress" />
+            <input type="email" id="form2Example1" class="form-control" name="emailAddress"
+                placeholder="Digite seu E-mail" />
             <label class="form-label" for="form2Example1">Email address</label>
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-            <input type="password" name="password" class="form-control" />
+            <input type="password" name="password" class="form-control" placeholder="Enter your password" />
             <label class="form-label" for="form2Example2">Password</label>
         </div>
 
