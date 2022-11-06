@@ -34,7 +34,7 @@ $servername = "BD_SERVIDOR";
 $username = "BD_USUARIO";
 $password = "BD_SENHA";
 $dbname = "BD_BANCO";
-$port =    "BD_PORT";
+$port =  "BD_PORT";
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
