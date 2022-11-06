@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $lastName = filter_input(INPUT_POST,'lastName',FILTER_SANITIZE_SPECIAL_CHARS);
     }
 
-    if(isset($_POST['email']) && !empty($_POST['email']) && $_POST['email'] != ''){
+    if(isset($_POST['email']) && !empty($_POST['email']) && ($_POST['email'] != '')){
         $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
     }
 
