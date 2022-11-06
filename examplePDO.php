@@ -1,6 +1,7 @@
 <?php
 
 include_once 'config.php';
+include_once 'connectionPDO1.php';
 
 ?>
 
@@ -37,14 +38,14 @@ $dbname = "BD_BANCO";
 $port =  "BD_PORT";
 
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  $dsn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-  $conn->beginTransaction();
+  $dsn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $dsn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+  $dsn->beginTransaction();
 
   // prepare sql and bind parameters
-  $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email, senha, datanascimento) VALUES (:firstname, :lastname, :email, :senha, :datanascimento)");
+  $stmt = $dsn->prepare("INSERT INTO MyGuests (firstname, lastname, email, senha, datanascimento) VALUES (:firstname, :lastname, :email, :senha, :datanascimento)");
   $stmt->bindParam(1,':firstname', $firstname,PDO::PARAM_STR);
   $stmt->bindParam(2,':lastname', $lastname,PDO::PARAM_STR);
   $stmt->bindParam(3,':email', $email,PDO::PARAM_STR);
