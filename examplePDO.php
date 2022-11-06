@@ -46,8 +46,8 @@ try {
 
   // prepare sql and bind parameters
   $stmt = $dsn->prepare("INSERT INTO MyGuests (firstname, lastname, email, senha, datanascimento) VALUES (:firstname, :lastname, :email, :senha, :datanascimento)");
-  $stmt->bindParam(1,':firstname', $firstname,PDO::PARAM_STR);
-  $stmt->bindParam(2,':lastname', $lastname,PDO::PARAM_STR);
+  $stmt->bindParam(1,':firstname', $firstName,PDO::PARAM_STR);
+  $stmt->bindParam(2,':lastname', $lastName,PDO::PARAM_STR);
   $stmt->bindParam(3,':email', $email,PDO::PARAM_STR);
   $stmt->bindParam(4,':senha', $senha,PDO::PARAM_STR);
   $stmt->bindParam(5,':datanascimento', $dataNascimento,PDO::PARAM_STR);
