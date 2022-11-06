@@ -2,7 +2,7 @@
 
 require_once('class.phpmailer.php');
 
-$mailer = new PHPMailer();
+// $mailer = new PHPMailer();
 $mailer->IsSMTP();
 $mailer->SMTPDebug = 1;
 $mailer->Port = 587; //Indica a porta de conexão 
