@@ -54,11 +54,35 @@ mail($destinatario, $assunto , $body, "From: $email\r\n");
             <input type="text" placeholder="Telefone" id="telefone" class="pt-xl-5" name="telefone">
         </div>
         <div class="group1 ml-xl-0 mx-sm-auto mb-sm-4 mb-lg-3 mx-lg-auto mb-xl-0">
-            <select name="assunto" id="assunto" class="mt-xl-5 mt-md-5">
-                <option value="seg">Assunto</option>
-                <option value="seg">Segurança</option>
-                <option value="seg">Segurança</option>
-                <option value="seg">Segurança</option>
+            <select id="estado" name="estado">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+                <option value="EX">Estrangeiro</option>
             </select>
         </div>
         <textarea placeholder="Mensagem" name="mensagem" id="" cols="30" rows="10" class="mt-xl-2"></textarea>
