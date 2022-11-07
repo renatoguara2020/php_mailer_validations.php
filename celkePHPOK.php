@@ -80,7 +80,7 @@ try{
         <label>Nível de Acesso: </label>
         <input type="number" name="niveis_acesso_id" placeholder="Nível de acesso do usuário" required /><br><br>
 
-        <input type="submit" value="Cadastrar" name="SendCadUsuario" />
+        <input type="submit" value="Cadastrar" name="SendCadUsuario" class="btn btn-primary me-md-2" type="button" />
     </form>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
