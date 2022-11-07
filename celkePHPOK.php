@@ -64,7 +64,7 @@ try{
 
 
     ?>
-    <form method="POST" action="">
+    <form method="POST" action="" width="70%">
         <label>Nome: </label>
         <input type="text" name="nome" placeholder="Nome completo" class="form-control form-control-sm" /><br><br>
 
