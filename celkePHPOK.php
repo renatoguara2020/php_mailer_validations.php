@@ -1,6 +1,3 @@
-<?php
-include_once "connectionPDO.php";
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,12 +11,28 @@ include_once "connectionPDO.php";
     <h2>Cadastrar Usuário</h2>
     <?php
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+try{
+    $conn = new PDO('mysql:host=localhost;dbname=celke', 'root', '');
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // $stmt = $conn->prepare('INSERT INTO students (firstname, lastname, datanascimento) VALUES (:nome, :email, :message11)');
+    // $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
+    // $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+    // $stmt->bindValue(':message1',$message, PDO::PARAM_STR);
+    // $stmt->execute();
+
+    
+} catch(PDOException $e) {
+    echo 'ERROR: ' . $e->getMessage();
+}
+
+
+
 
     $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT); 
     
-    if(!empty($dados['SendCadUsuario']) && isset($dados['SendCadUsuario']) == true){
-        //var_dump($dados);
+    if(!empty($dados['SendCadUsuario'])){
+        var_dump($dados);
 
         $query_usuario = "INSERT INTO usuarios (nome, email, senha, sists_usuario_id, niveis_acesso_id, created) 
                 VALUES (:nome, :email, :senha, :sists_usuario_id, :niveis_acesso_id, NOW())";
@@ -45,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                           </div>';
                 }
     }
-}
+
 
     ?>
     <form method="POST" action="">
