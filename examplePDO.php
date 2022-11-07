@@ -1,59 +1,44 @@
 <?php
 
-include_once 'config.php';
-include_once 'connectionPDO1.php';
+// include_once 'config.php';
+// include_once 'connectionPDO1.php';
 
-?>
 
-<?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if (isset($_POST['emailAddress']) && !empty($_POST['emailAddress']) && ($_POST['emailAddress'] != '')) {
+    if (isset($_POST['emailAddress']) && !empty($_POST['emailAddress'])) {
         $emailAddress = filter_input(INPUT_POST,'emailAddress',FILTER_SANITIZE_EMAIL);
     }
 
-    if(isset($_POST['password']) && !empty($_POST['password']) && ($_POST['password'] != '')) {
-        $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_SPECIAL_CHARS);
+    if(isset($_POST['password']) && !empty($_POST['password']) && $_POST['password']) {
+        $password = filter_input(INPUT_POST,'password',FILTER_SANITIZE_SPECIAL_CHARS);
     }
    
 }
 
-$servername = "BD_SERVIDOR";
-$username = "BD_USUARIO";
-$password = "BD_SENHA";
-$dbname = "BD_BANCO";
-$port =  "BD_PORT";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "celke";
+
 
 try {
   $dsn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   // set the PDO error mode to exception
-  $dsn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $dsn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-  $dsn->beginTransaction();
+//   $dsn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//   $dsn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+//   $dsn->beginTransaction();
 
   // prepare sql and bind parameters
-  $stmt = $dsn->prepare("INSERT INTO MyGuests (username, senha) VALUES (:username, :senha)");
-  $stmt->bindParam(1,':username', $emailAddress, PDO::PARAM_STR);
-  $stmt->bindParam(2,':senha', $senha, PDO::PARAM_STR);
+  
+  $stmt->$dsn->prepare("INSERT INTO users (username, senha) VALUES (:username, :senha)");
+  $stmt->bindParam(":username", $emailAddress, PDO::PARAM_STR);
+  $stmt->bindParam(":senha", $password, PDO::PARAM_STR);
+
   
 
-  // insert a row
-  $firstname = "John";
-  $lastname = "Doe";
-  $email = "john@example.com";
-  $stmt->execute();
-
-  // insert another row
-  $firstname = "Mary";
-  $lastname = "Moe";
-  $email = "mary@example.com";
-  $stmt->execute();
-
-  // insert another row
-  $firstname = "Julie";
-  $lastname = "Dooley";
-  $email = "julie@example.com";
+  
   $stmt->execute();
 
   echo "New records created successfully";
