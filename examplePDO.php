@@ -32,14 +32,14 @@ try {
 
   // prepare sql and bind parameters
   
-  $stmt->$dsn->prepare("INSERT INTO users (username, senha) VALUES (:username, :senha)");
-  $stmt->bindParam(":username", $emailAddress, PDO::PARAM_STR);
-  $stmt->bindParam(":senha", $password, PDO::PARAM_STR);
+  $stmt->$dsn->prepare("INSERT INTO users (username, senha) VALUES ($emailAddress, $password)");
+//   $stmt->bindParam(":username", $emailAddress, PDO::PARAM_STR);
+//   $stmt->bindParam(":senha", $password, PDO::PARAM_STR);
 
   
 
   
-  $stmt->execute();
+  $stmt->execute($dsn);
 
   echo "New records created successfully";
 } catch(PDOException $e) {

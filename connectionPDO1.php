@@ -1,6 +1,6 @@
 <?php
         $servername = "localhost";
-        $database = "pdo_testes"; 
+        $database = "celke"; 
         $username = "root";
         $password = "";
         $sql = "mysql:host=$servername;dbname=$database; $username, $password";
