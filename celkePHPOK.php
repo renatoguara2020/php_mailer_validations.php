@@ -52,7 +52,7 @@ try{
 
                 if($cad_usuario->rowCount()){
                     echo '<div class="alert alert-success" role="alert">
-                             <h3>New record created Successfully !!!<h3>
+                             <h5>New record created Successfully !!!<h5>
                           </div>';
                 }else{
                     
