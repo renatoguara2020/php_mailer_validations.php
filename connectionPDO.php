@@ -17,7 +17,9 @@ try {
     $conn = new PDO('mysql:host=localhost;dbname=celke', 'root', '');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->prepare('SELECT * FROM students');
+    $stmt = $conn->prepare('INSERT INTO (nome, email)VALUES(:nome, :email)');
+    $stmt->bindValue(1, ':nome', $nome, PDO::PARAM_STR);
+    $stmt->bindValue(2, ':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
     
