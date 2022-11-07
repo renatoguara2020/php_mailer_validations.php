@@ -32,7 +32,7 @@ try{
     $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT); 
     
     if(!empty($dados['SendCadUsuario'])){
-        var_dump($dados);
+        // var_dump($dados);
 
         $query_usuario = "INSERT INTO usuarios (nome, email, senha, sists_usuario_id, niveis_acesso_id, created) 
                 VALUES (:nome, :email, :senha, :sists_usuario_id, :niveis_acesso_id, NOW())";
@@ -43,11 +43,11 @@ try{
                 $cad_usuario->bindParam(':senha', $senha_cript);
                 $cad_usuario->bindParam(':sists_usuario_id', $dados['sists_usuario_id'], PDO::PARAM_INT);
                 $cad_usuario->bindParam(':niveis_acesso_id', $dados['niveis_acesso_id'], PDO::PARAM_INT);
-                $conn->beginTransaction();
+                // $conn->beginTransaction();
 
                 $cad_usuario->execute();
 
-                if($cad_usuario->rowCount() > 0){
+                if($cad_usuario->rowCount()){
                     echo '<div class="alert alert-success" role="alert">
                              <h3>New record created Successfully !!!<h3>
                           </div>';
