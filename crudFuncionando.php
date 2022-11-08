@@ -140,7 +140,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                    echo "value=\"{$celular}\"";
                }
                ?> class="form-control" />
-        <input type="submit" value="salvar" class="btn btn-success"> />
+        <input type="submit" value="salvar" class="btn btn-success" />
         <input type="reset" value="Novo" class="btn btn-warning" />
         <hr>
     </form>
