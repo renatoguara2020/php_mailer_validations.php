@@ -46,7 +46,6 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
         echo "Erro: " . $erro->getMessage();
     }
 }
-Anúncios
 
 
 
