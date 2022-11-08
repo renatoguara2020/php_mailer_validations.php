@@ -123,7 +123,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                 if (isset($id) && $id != null || $id != "") {
                     echo "value=\"{$id}\"";
                 }
-                ?> class="form-control" />
+                ?> class="form-control form-control-md" />
         Nome:
         <input type="text" name="nome" <?php
  
@@ -131,7 +131,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                if (isset($nome) && $nome != null || $nome != "") {
                    echo "value=\"{$nome}\"";
                }
-               ?> class="form-control" />
+               ?> class="form-control form-control-md" />
         E-mail:
         <input type="text" name="email" <?php
  
@@ -139,7 +139,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                if (isset($email) && $email != null || $email != "") {
                    echo "value=\"{$email}\"";
                }
-               ?> class="form-control" />
+               ?> class="form-control form-control-md" />
         Celular:
         <input type="text" name="celular" <?php
  
@@ -147,16 +147,16 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                if (isset($celular) && $celular != null || $celular != "") {
                    echo "value=\"{$celular}\"";
                }
-               ?> class="form-control" />
+               ?> class="form-control" /><br>
         <input type="submit" value="salvar" class="btn btn-success" />
         <input type="reset" value="Novo" class="btn btn-warning" />
-        <hr>
+        <hr><br>
     </form>
     <table class="table table-striped table-hover">
         <tr>
             <th>Nome</th>
             <th>E-mail</th>
-            <th>Celular</th>
+            <th>Celular<br></th>
             <th>Ações</th>
         </tr>
         <?php
