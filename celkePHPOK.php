@@ -64,25 +64,23 @@ try{
 
 
     ?>
-    <form method="POST" action="" width="70%">
+    <form method="POST" action="">
         <label>Nome: </label>
-        <input type="text" name="nome" placeholder="Nome completo" class="form-control form-control-sm" /><br><br>
+        <input type="text" name="nome" placeholder="Nome completo" class=" form-control-lg" /><br><br>
 
         <label>E-mail: </label>
-        <input type="email" name="email" placeholder="Melhor e-mail do usuário"
-            class="form-control form-control-sm" /><br><br>
+        <input type="email" name="email" placeholder="Melhor e-mail do usuário" class="form-control-lg" /><br><br>
 
         <label>Senha: </label>
-        <input type="password" name="senha" placeholder="Senha do usuário"
-            class="form-control form-control-sm" /><br><br>
+        <input type="password" name="senha" placeholder="Senha do usuário" class="form-control-lg" /><br><br>
 
-        <label>Situação do Usuário: </label>
+        <label>Sit do Usuário: </label>
         <input type="number" name="sists_usuario_id" placeholder="Situação do usuário"
-            class="form-control form-control-sm" /><br><br>
+            class="form-control-lg" /><br><br>
 
         <label>Nível de Acesso: </label>
         <input type="number" name="niveis_acesso_id" placeholder="Nível de acesso do usuário"
-            class="form-control" /><br><br>
+            class="form-control-lg" /><br><br>
 
         <input type="submit" value="Cadastrar" name="SendCadUsuario" class="btn btn-primary me-md-2" type="button" />
     </form>
