@@ -146,7 +146,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                }
                ?> class="form-control form-control-md" />
         E-mail:
-        <input type="text" name="email" <?php
+        <input type="email" name="email" <?php
  
                // Preenche o email no campo email com um valor "value"
                if (isset($email) && $email != null || $email != "") {
