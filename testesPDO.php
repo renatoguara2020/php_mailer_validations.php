@@ -31,7 +31,9 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
          
         if ($stmt->execute()) {
             if ($stmt->rowCount() > 0) {
-                echo "Dados cadastrados com sucesso!";
+                echo '<div class="alert alert-success" role="alert">
+                         <h5>New record created Successfully !!!<h5>
+                       </div>';
                 $id = null;
                 $nome = null;
                 $email = null;
