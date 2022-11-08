@@ -156,7 +156,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
         <tr>
             <th>Nome</th>
             <th>E-mail</th>
-            <th>Celular<br></th>
+            <th>Celular</th>
             <th>Ações</th>
         </tr>
         <?php
