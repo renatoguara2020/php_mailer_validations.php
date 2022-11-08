@@ -50,7 +50,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
 
 
 ?>
-
+<!DOCTYPE html>
 <html>
 
 <head>
