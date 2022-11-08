@@ -153,6 +153,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
         <hr><br>
     </form>
     <table class="table table-striped table-hover">
+        <h1>Usuários Cadastrados</h1>
         <tr>
             <th>Nome</th>
             <th>E-mail</th>
