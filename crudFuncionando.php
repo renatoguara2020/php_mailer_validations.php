@@ -43,13 +43,17 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
  
         if ($stmt->execute()) {
             if ($stmt->rowCount() > 0) {
-                echo "Dados cadastrados com sucesso!";
+                echo '<div class="alert alert-success" role="alert">
+                        <h5>New record created Successfully !!!<h5>
+                      </div>';
                 $id = null;
                 $nome = null;
                 $email = null;
                 $celular = null;
             } else {
-                echo "Erro ao tentar efetivar cadastro";
+                echo '<div class="alert alert-danger" role="alert">
+                        Unable to create new record! Try again later !!
+                      </div>';
             }
         } else {
             throw new PDOException("Erro: Não foi possível executar a declaração sql");
