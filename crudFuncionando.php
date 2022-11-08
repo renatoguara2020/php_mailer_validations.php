@@ -88,7 +88,9 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
         $stmt = $conexao->prepare("DELETE FROM contatos WHERE id = ?");
         $stmt->bindParam(1, $id, PDO::PARAM_INT);
         if ($stmt->execute()) {
-            echo "Registo foi excluído com êxito";
+            echo '<div class="alert alert-success" role="alert">
+                        <h5>Record deleted Successfully!!!<h5>
+                  </div>';
             $id = null;
         } else {
             throw new PDOException("Erro: Não foi possível executar a declaração sql");
@@ -107,6 +109,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
