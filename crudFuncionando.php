@@ -173,6 +173,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                                        ."<a href=\"?act=del&id=".$rs->id."\">[Excluir]</a></center></td>";
                                        
                                        
+                                       
                             echo "</tr>";
                         }
                     } else {
