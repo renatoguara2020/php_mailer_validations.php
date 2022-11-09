@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 try {
     $conn = new PDO("mysql:host=localhost;dbname=pdo_testes", "root", "");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     // $conn->exec("set names utf8");
     $conn->exec("SET CHARACTER SET utf8");      // Sets encoding UTF-8
 } catch (PDOException $erro) {
