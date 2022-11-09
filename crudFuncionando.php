@@ -34,9 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  
 // Cria a conexão com o banco de dados
 try {
-    $conexao = new PDO("mysql:host=localhost;dbname=pdo_testes", "root", "");
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $conexao->exec("set names utf8");
+    $conn = new PDO("mysql:host=localhost;dbname=pdo_testes", "root", "");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->exec("set names utf8");
 } catch (PDOException $erro) {
     echo "Erro na conexão:".$erro->getMessage();
 }
@@ -45,14 +45,14 @@ try {
 if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
     try {
         if ($id != "") {
-            $stmt = $conexao->prepare("UPDATE contatos SET nome=?, email=?, celular=? WHERE id = ?");
+            $stmt = $conn->prepare("UPDATE contatos SET nome=?, email=?, celular=? WHERE id = ?");
             $stmt->bindParam(4, $id);
         } else {
-            $stmt = $conexao->prepare("INSERT INTO contatos (nome, email, celular) VALUES (?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO contatos (nome, email, celular) VALUES (?, ?, ?)");
         }
-        $stmt->bindParam(1, $nome);
-        $stmt->bindParam(2, $email);
-        $stmt->bindParam(3, $celular);
+        $stmt->bindParam(1, $nome, PDO::PARAM_STR);
+        $stmt->bindParam(2, $email, PDO::PARAM_STR);
+        $stmt->bindParam(3, $celular, PDO::PARAM_STR);
  
         if ($stmt->execute()) {
             if ($stmt->rowCount() > 0) {
@@ -79,7 +79,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
 // Bloco if que recupera as informações no formulário, etapa utilizada pelo Update
 if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "upd" && $id != "") {
     try {
-        $stmt = $conexao->prepare("SELECT * FROM contatos WHERE id = ?");
+        $stmt = $conn->prepare("SELECT * FROM contatos WHERE id = ?");
         $stmt->bindParam(1, $id, PDO::PARAM_INT);
         if ($stmt->execute()) {
             $rs = $stmt->fetch(PDO::FETCH_OBJ);
@@ -98,7 +98,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "upd" && $id != "") {
 // Bloco if utilizado pela etapa Delete
 if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
     try {
-        $stmt = $conexao->prepare("DELETE FROM contatos WHERE id = ?");
+        $stmt = $conn->prepare("DELETE FROM contatos WHERE id = ?");
         $stmt->bindParam(1, $id, PDO::PARAM_INT);
         if ($stmt->execute()) {
             echo '<div class="alert alert-success" role="alert">
@@ -178,7 +178,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
  
                 // Bloco que realiza o papel do Read - recupera os dados e apresenta na tela
                 try {
-                    $stmt = $conexao->prepare("SELECT * FROM contatos");
+                    $stmt = $conn->prepare("SELECT * FROM contatos");
                     if ($stmt->execute()) {
                         while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                             echo "<tr>";
