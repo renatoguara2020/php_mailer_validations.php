@@ -5,8 +5,7 @@
  define('PASSWORD', '123456');
  
    // Comprobamos si existe el nombre de usuario y es correcto
-   if (!isset($_SERVER['PHP_AUTH_USER']) || 
-       ($_SERVER['PHP_AUTH_USER'] != USUARIO || $_SERVER['PHP_AUTH_PW'] != PASSWORD))
+   if (!isset($_SERVER['PHP_AUTH_USER']) || ($_SERVER['PHP_AUTH_USER'] != USUARIO || $_SERVER['PHP_AUTH_PW'] != PASSWORD))
       {
       header('WWW-Authenticate: Basic realm=" Zona Restringida "');
       header('HTTP/1.0 401 Unauthorized');
