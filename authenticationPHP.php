@@ -17,6 +17,6 @@
    else
       {
       echo '<h2 align="center">Zona Restrita do site !!!</h2>';
-      echo 'Bom dia USUARIO'.$_SERVER['PHP_AUTH_USER'];
+      echo 'Bom dia USUARIO'.' '.$_SERVER['PHP_AUTH_USER'];
       }
 ?>
