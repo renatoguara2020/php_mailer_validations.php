@@ -7,7 +7,7 @@
    // Comprobamos si existe el nombre de usuario y es correcto
    if (!isset($_SERVER['PHP_AUTH_USER']) || ($_SERVER['PHP_AUTH_USER'] != USUARIO || $_SERVER['PHP_AUTH_PW'] != PASSWORD))
       {
-      header('WWW-Authenticate: Basic realm=" Zona Restrita do site!!!!"');
+      header('WWW-Authenticate: Basic realm="Zona Restrita do site!!!!" ');
       header('HTTP/1.0 401 Unauthorized');
       echo 'ZONA RESTRINGIDA: se requiere autorización.';
       exit();
