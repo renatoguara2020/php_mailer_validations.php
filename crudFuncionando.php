@@ -1,4 +1,6 @@
 <?php
+
+require_once 'authenticationPHP.php';
 /**
  * Projeto de aplicação CRUD utilizando PDO - Agenda de Contatos
  *
