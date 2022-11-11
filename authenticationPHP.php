@@ -9,8 +9,9 @@
     exit("Access Denied: Username and password required."); 
   } else{
 
-    header('HTTP/1.1 200 OK Authorized'); 
     echo 'Usuário  '.$_SERVER['PHP_AUTH_USER']. '  Logado!!!!';
+
+    
     
   }
 ?>
