@@ -205,7 +205,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                     echo "Erro: ".$erro->getMessage();
                 }
                 ?>
-    </table>
+    </table><br><br><br><br><br><br><br><br><br><br>
     <!-- Footer -->
     <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
