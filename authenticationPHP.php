@@ -10,7 +10,7 @@
   } else{
 
     header('HTTP/1.1 200 OK Authorized'); 
-    echo 'Usuário'.$_SERVER['PHP_AUTH_USER']. 'Logado!!!!';
+    echo 'Usuário  '.$_SERVER['PHP_AUTH_USER']. '  Logado!!!!';
     
   }
 ?>
