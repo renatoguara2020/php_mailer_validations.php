@@ -80,8 +80,8 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "save" && $nome != "") {
         } else {
             throw new PDOException("Erro: Não foi possível executar a declaração sql");
         }
-    } catch (PDOException $erro) {
-        echo "Erro: ".$erro->getMessage();
+    } catch (PDOException $error) {
+        echo "Erro: ".$error->getMessage();
     }
 }
  
