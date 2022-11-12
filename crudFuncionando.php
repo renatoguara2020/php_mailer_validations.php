@@ -13,9 +13,8 @@ require_once 'authenticationPHP.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $id = (isset($_POST["id"]) && $_POST["id"] != null) ? $_POST["id"] : "";
-
-        
     
+
     
     if ((isset($_POST["nome"]) && $_POST["nome"] != null) && $_POST["nome"] != ""){
 
@@ -47,8 +46,8 @@ try {
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     // $conn->exec("set names utf8");
     $conn->exec("SET CHARACTER SET utf8");      // Sets encoding UTF-8
-} catch (PDOException $erro) {
-    echo "Erro na conexão:".$erro->getMessage();
+} catch (PDOException $error) {
+    echo "Erro na conexão:".$error->getMessage();
 }
  
 // Bloco If que Salva os dados no Banco - atua como Create e Update
