@@ -11,7 +11,11 @@ require_once 'authenticationPHP.php';
  
 // Verificar se foi enviando dados via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
     $id = (isset($_POST["id"]) && $_POST["id"] != null) ? $_POST["id"] : "";
+
+        
+    
     
     if ((isset($_POST["nome"]) && $_POST["nome"] != null) && $_POST["nome"] != ""){
 
@@ -188,7 +192,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                     $stmt = $conn->prepare("SELECT * FROM contatos");
                     if ($stmt->execute()) {
                         while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-                            echo "<tr>";
+                            echo "<tbody>";
                             echo "<td>".$rs->nome."</td><td>".$rs->email."</td><td>".$rs->celular
                                        ."</td><td><center><a href=\"?act=upd&id=".$rs->id."\">[Alterar]</a>"
                                        ."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
@@ -196,7 +200,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                                        
                                        
                                        
-                            echo "</tr>";
+                            echo "</tbody>";
                         }
                     } else {
                         echo "Erro: Não foi possível recuperar os dados do banco de dados";
