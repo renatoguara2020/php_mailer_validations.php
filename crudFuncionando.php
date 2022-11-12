@@ -213,15 +213,16 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
             <!-- Section: Social media -->
             <section class="mb-4">
                 <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/renatoalves.soares.56"
+                    role="button"><i class="fab fa-facebook-f"></i></a>
 
                 <!-- Twitter -->
                 <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
                         class="fab fa-twitter"></i></a>
 
                 <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" role="button"><i
                         class="fab fa-google"></i></a>
 
                 <!-- Instagram -->
@@ -233,8 +234,8 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
                         class="fab fa-linkedin-in"></i></a>
 
                 <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-github"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/renatoguara2020"
+                    role="button"><i class="fab fa-github"></i></a>
             </section>
             <!-- Section: Social media -->
 
