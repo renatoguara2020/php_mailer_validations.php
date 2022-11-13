@@ -13,9 +13,9 @@
     $mensagem.='<b>Deseja receber novidades:</b> '.$radio.'<br>';
     $mensagem.='<b>Data de envio:</b> '.$date.'<br>';
     $mensagem.='<b>Mensagem:</b><br> '.$msg;
-    require("phpmailer/src/PHPMailer.php");
-    require("phpmailer/src/SMTP.php");
-    require ("phpmailer/src/Exception.php");
+    require("./PHPMailer/src/PHPMailer.php");
+    require("./PHPMailer/src/SMTP.php");
+    require ("./PHPMailer/src/Exception.php");
 
     $mail = new PHPMailer\PHPMailer\PHPMailer();
     $mail->isSMTP(); // Não modifique
